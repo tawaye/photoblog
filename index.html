@@ -4,7 +4,36 @@
         <title></title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript">
-           
+            var currentAlbum = "photos";
+            var currentPhotoId = 0;
+            var photos = ["montreal-2012-01.jpg",
+                          "montreal-2012-02.jpg",
+                          "montreal-2012-03.jpg"];
+            var currentPhoto = photos[currentPhotoId];
+            var photoPath = "./" + currentAlbum+ "/"; 
+
+            function showPrevPhoto() {
+                if (currentPhotoId >=1) {
+                    currentPhotoId = currentPhotoId - 1;
+                    currentPhoto = photos[currentPhotoId];
+                    var photoUrl = photoPath + currentPhoto;
+                    document.getElementById('photo').src = photoUrl;
+                }
+                return false;
+            }
+
+            function showNextPhoto() {
+                if (currentPhotoId < photos.length - 1) {
+                    currentPhotoId = currentPhotoId + 1;
+                    currentPhoto = photos[currentPhotoId];
+                    var photoUrl = photoPath + currentPhoto;
+                    document.getElementById('photo').src = photoUrl;
+                }
+                return false;
+            }
+
+
+
         </script>
     </head>
 
@@ -29,16 +58,16 @@
         <div id="container">
             <div id="photoframe">
                 <div id="nav-prev">
-                    <img src="nav-prev.png"></img>
+                    <a href="" onClick="showPrevPhoto(); return false;"><img src="nav-prev.png"></img></a>
                 </div>
                 <div id="photos">
-                    <img src="./photos/before/RS-20120902-28.jpg"></img>
+                    <img id="photo" src="./photos/montreal-2012-01.jpg"></img>
                     <div id="description">
                         Montreal, 2012
                     </div>
                 </div>
                 <div id="nav-next">
-                    <img src="nav-next.png"></img>
+                    <a href="" onClick="showNextPhoto(); return false;"><img src="nav-next.png"></img></a>
                 </div>
 
             </div> 
