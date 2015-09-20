@@ -6,18 +6,60 @@
         <script type="text/javascript">
             var currentAlbum = "photos";
             var currentPhotoId = 0;
-            var photos = ["montreal-2012-01.jpg",
-                          "montreal-2012-02.jpg",
-                          "montreal-2012-03.jpg"];
-            var currentPhoto = photos[currentPhotoId];
+            var photos = [ ["montreal-2012-01.jpg", "Montreal 2012"],
+                           ["montreal-2012-02.jpg", "Montreal 2012"],
+                           ["montreal-2012-03.jpg", "Montreal 2012"],
+                           ["montreal-2012-04.jpg", "Montreal 2012"],
+                           ["montreal-2012-05.jpg", "Montreal 2012"],
+                           ["montreal-2012-06.jpg", "Montreal 2012"],
+                           ["montreal-2012-07.jpg", "Montreal 2012"],
+                           ["montreal-2012-08.jpg", "Montreal 2012"],
+                           ["montreal-2012-09.jpg", "Montreal 2012"],
+                           ["montreal-2012-10.jpg", "Montreal 2012"],
+                           ["montreal-2012-11.jpg", "Montreal 2012"],
+                           ["montreal-2012-12.jpg", "Montreal 2012"],
+                           ["montreal-2012-13.jpg", "Montreal 2012"],
+                           ["montreal-2012-14.jpg", "Montreal 2012"],
+                           ["montreal-2012-15.jpg", "Montreal 2012"],
+                           ["montreal-2012-16.jpg", "Montreal 2012"],
+                           ["montreal-2012-17.jpg", "Montreal 2012"],
+                           ["shanghai-2010-01.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-02.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-03.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-04.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-05.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-06.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-07.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-08.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-09.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-10.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-11.jpg", "Shanghai 2010"],
+                           ["shanghai-2010-12.jpg", "Shanghai 2010"],
+                           ["hangzhou-2010-01.jpg", "Hangzhou 2010"],
+                           ["hangzhou-2010-02.jpg", "Hangzhou 2010"],
+                           ["hangzhou-2010-03.jpg", "Hangzhou 2010"],
+                           ["hangzhou-2010-04.jpg", "Hangzhou 2010"],
+                           ["anqing-2010-01.jpg", "An'qing 2010"],
+                           ["shanghai-2009-01.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-02.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-03.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-04.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-05.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-06.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-07.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-08.jpg", "Shanghai 2009"],
+                           ["shanghai-2009-09.jpg", "Shanghai 2009"],
+                        ];
+            var currentPhoto = photos[currentPhotoId][0];
             var photoPath = "./" + currentAlbum+ "/"; 
 
             function showPrevPhoto() {
                 if (currentPhotoId >=1) {
                     currentPhotoId = currentPhotoId - 1;
-                    currentPhoto = photos[currentPhotoId];
+                    currentPhoto = photos[currentPhotoId][0];
                     var photoUrl = photoPath + currentPhoto;
                     document.getElementById('photo').src = photoUrl;
+                    document.getElementById('description').innerHTML = photos[currentPhotoId][1];
                 }
                 return false;
             }
@@ -25,9 +67,11 @@
             function showNextPhoto() {
                 if (currentPhotoId < photos.length - 1) {
                     currentPhotoId = currentPhotoId + 1;
-                    currentPhoto = photos[currentPhotoId];
+                    currentPhoto = photos[currentPhotoId][0];
                     var photoUrl = photoPath + currentPhoto;
                     document.getElementById('photo').src = photoUrl;
+                    document.getElementById('description').innerHTML = photos[currentPhotoId][1];
+
                 }
                 return false;
             }
